@@ -7,6 +7,10 @@ package intelcons;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,7 +26,7 @@ public class HomePage extends javax.swing.JFrame {
         // set this page at the center of main screen
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
-        setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
+        setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
     }
 
     /**
@@ -34,55 +38,368 @@ public class HomePage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane4 = new javax.swing.JTabbedPane();
-        jLabel1 = new javax.swing.JLabel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jMenu1 = new javax.swing.JMenu();
+        jTabbedPane11 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        txtHName = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtHAddress = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtHHotline = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableHospital = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtLongtitude = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtLatitude = new javax.swing.JTextField();
+        jHLocation = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jHRanking = new javax.swing.JComboBox<>();
+        btnHAdd = new javax.swing.JButton();
+        btnHEdit = new javax.swing.JButton();
+        btnHDelete = new javax.swing.JButton();
+        btnHReset = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        jTabbedPane5 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
 
-        jLabel1.setText("jLabel1");
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
-        jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        jTabbedPane2.setToolTipText("");
-        jTabbedPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPane11.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane11.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel2.setText("Name");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        jPanel2.add(txtHName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 16, 190, 30));
+
+        jLabel3.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel3.setText("Address");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 95, 31));
+        jPanel2.add(txtHAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 190, 30));
+
+        jLabel4.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel4.setText("Hotline");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 95, -1));
+        jPanel2.add(txtHHotline, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 190, -1));
+
+        jTableHospital.setFont(new java.awt.Font("AppleGothic", 0, 12)); // NOI18N
+        jTableHospital.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Name", "Address", "Hotline", "Location", "Longtitude", "Latitude", "Ranking"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTableHospital.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableHospitalMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTableHospital);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 6, 610, 490));
+
+        jLabel6.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel6.setText("Location");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel7.setText("Longtitude");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, 20));
+        jPanel2.add(txtLongtitude, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 190, -1));
+
+        jLabel8.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel8.setText("Latitude");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 20));
+
+        txtLatitude.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLatitudeActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtLatitude, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 190, -1));
+
+        jHLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(jHLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 190, -1));
+
+        jLabel9.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel9.setText("Ranking");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+
+        jHRanking.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(jHRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 190, -1));
+
+        btnHAdd.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnHAdd.setText("Add");
+        btnHAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHAddActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnHAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
+
+        btnHEdit.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnHEdit.setText("Edit");
+        btnHEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHEditActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnHEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, -1));
+
+        btnHDelete.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnHDelete.setText("Delete");
+        btnHDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHDeleteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnHDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, -1, -1));
+
+        btnHReset.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnHReset.setText("Reset");
+        btnHReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHResetActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnHReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, -1, -1));
+
+        jTabbedPane11.addTab("Hospital", jPanel2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 890, Short.MAX_VALUE)
+            .addGap(0, 994, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 497, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Hospital", jPanel1);
-        jTabbedPane2.addTab("Department", jTabbedPane1);
+        jTabbedPane11.addTab("Department", jPanel1);
 
-        jTabbedPane3.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        jTabbedPane2.addTab("Doctor", jTabbedPane3);
-        jTabbedPane2.addTab("User", jTabbedPane5);
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 994, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        jTabbedPane11.addTab("Doctor", jPanel3);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 994, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        jTabbedPane11.addTab("User", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 936, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(jTabbedPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 1040, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtLatitudeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLatitudeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLatitudeActionPerformed
+    // bind hospital list to hospital page
+    private void BindHospital() throws Exception {
+        DefaultTableModel model = (DefaultTableModel) jTableHospital.getModel();
+        model.setRowCount(0);
+        ArrayList<Hospital> listProduct = Hospital.GetHospitalList();
+        for (int i = 0; i < listProduct.size(); i++) {
+            Hospital temp = listProduct.get(i);
+            model.addRow(new Object[]{temp.id, temp.name, temp.address, temp.hotline, temp.location_id, temp.longitude, temp.latitude, temp.ranking});
+        }
+    }
+
+    // bind location list to location combobox
+    private void BindLocation() throws Exception {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        ArrayList<Location> LocationList = Location.GetLocationList();
+        for (int i = 0; i < LocationList.size(); i++) {
+            model.addElement(LocationList.get(i));
+        }
+        jHLocation.setModel(model);
+    }
+
+    // bind ranking list to ranking combobox
+    private void BindRanking() throws Exception {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        ArrayList<Integer> LocationList = Hospital.GetRankingList();
+        for (int i = 0; i < LocationList.size(); i++) {
+            model.addElement(LocationList.get(i));
+        }
+        jHRanking.setModel(model);
+    }
+
+    // bind location list to location combobox
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        try {
+            // show location to location combobox
+            BindLocation();
+            // show ranking to ranking combobox
+            BindRanking();
+            // show hospital list to hospital page
+            BindHospital();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+    // get hospital information
+    private Hospital GetHospital() throws Exception {
+        if ("".equals(txtHName.getText()) || "".equals(txtHAddress.getText()) || "".equals(txtHHotline.getText()) || "".equals(txtLongtitude.getText()) || "".equals(txtLatitude.getText())) {
+            throw new Exception("Hospital information cannot be left blank!”");
+        }
+        return new Hospital(txtHName.getText(), txtHAddress.getText(), txtHHotline.getText(), ((Location) jHLocation.getSelectedItem()).id, txtLongtitude.getText(), txtLatitude.getText(), ((Integer) jHRanking.getSelectedItem()));
+    }
+
+    private void btnHAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHAddActionPerformed
+        // TODO add your handling code here:
+        try {
+            Hospital temp = GetHospital();
+            temp.InsertHospital();
+            // show hospital list to hospital page
+            BindHospital();
+            JOptionPane.showMessageDialog(this, "Successfully added new hospital!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnHAddActionPerformed
+
+    private void btnHResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHResetActionPerformed
+        // TODO add your handling code here:
+        txtHName.setText("");
+        txtHAddress.setText("");
+        txtHHotline.setText("");
+        txtLongtitude.setText("");
+        txtLatitude.setText("");
+    }//GEN-LAST:event_btnHResetActionPerformed
+
+    private void btnHEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHEditActionPerformed
+        // TODO add your handling code here:
+        try {
+            Hospital temp = GetHospital();
+            // get hospital id
+            DefaultTableModel model = (DefaultTableModel) jTableHospital.getModel();
+            int row = jTableHospital.getSelectedRow();
+            int hospitalId = (int) model.getValueAt(row, 0);
+            // delete hospital by id
+            temp.UpdateHospital(hospitalId);
+            BindHospital();
+            JOptionPane.showMessageDialog(this, "Successful product update!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnHEditActionPerformed
+
+    private void jTableHospitalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableHospitalMouseClicked
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTableHospital.getModel();
+            int row = jTableHospital.getSelectedRow();
+            txtHName.setText(model.getValueAt(row, 1).toString());
+            txtHAddress.setText(model.getValueAt(row, 2).toString());
+            txtHHotline.setText(model.getValueAt(row, 3).toString());
+
+            // "" because there is no locatioin name in 
+            Location temp = new Location(model.getValueAt(row, 4).toString(), "");
+
+            ArrayList<Location> LocationList = Location.GetLocationList();
+            for (int i = 0; i < LocationList.size(); i++) {
+                if (LocationList.get(i).id.equals(temp.id)) {
+                    jHLocation.setSelectedIndex(i);
+                    break;
+                }
+            }
+
+            txtLongtitude.setText(model.getValueAt(row, 5).toString());
+            txtLatitude.setText(model.getValueAt(row, 6).toString());
+
+            // set ranking to ranking combobox
+            ArrayList<Integer> RankingList = Hospital.GetRankingList();
+            for (int i = 0; i < RankingList.size(); i++) {
+                if (RankingList.get(i).equals(model.getValueAt(row, 7))) {
+                    jHRanking.setSelectedIndex(i);
+                    break;
+                }
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jTableHospitalMouseClicked
+
+    private void btnHDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHDeleteActionPerformed
+        // TODO add your handling code here:
+        try {
+            int input = JOptionPane.showConfirmDialog(null, "Do you want to delete this hospital?", "Warning", JOptionPane.YES_NO_OPTION);
+            // 0=yes, 1=no, 2=cancel
+            if (input == 0) //th yes
+            {
+                // get hospital id
+                DefaultTableModel model = (DefaultTableModel) jTableHospital.getModel();
+                int row = jTableHospital.getSelectedRow();
+                int hospitalId = (int) model.getValueAt(row, 0);
+                Hospital.Delete(hospitalId);
+                txtHName.setText("");
+                txtHAddress.setText("");
+                txtHHotline.setText("");
+                txtLongtitude.setText("");
+                txtLatitude.setText("");
+                BindHospital();
+                JOptionPane.showMessageDialog(this, "Successful product delete!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnHDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,12 +437,31 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnHAdd;
+    private javax.swing.JButton btnHDelete;
+    private javax.swing.JButton btnHEdit;
+    private javax.swing.JButton btnHReset;
+    private javax.swing.JComboBox<String> jHLocation;
+    private javax.swing.JComboBox<String> jHRanking;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane11;
+    private javax.swing.JTable jTableHospital;
+    private javax.swing.JTextField txtHAddress;
+    private javax.swing.JTextField txtHHotline;
+    private javax.swing.JTextField txtHName;
+    private javax.swing.JTextField txtLatitude;
+    private javax.swing.JTextField txtLongtitude;
     // End of variables declaration//GEN-END:variables
 }
