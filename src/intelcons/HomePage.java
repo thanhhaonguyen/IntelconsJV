@@ -501,10 +501,20 @@ public class HomePage extends javax.swing.JFrame {
 
         btnUEdit.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
         btnUEdit.setText("Edit");
+        btnUEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUEditActionPerformed(evt);
+            }
+        });
         jPanel4.add(btnUEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
 
         btnUDelete.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
         btnUDelete.setText("Delete");
+        btnUDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUDeleteActionPerformed(evt);
+            }
+        });
         jPanel4.add(btnUDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, -1, -1));
 
         btnUReset.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
@@ -531,6 +541,11 @@ public class HomePage extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        jTableUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUserMouseClicked(evt);
             }
         });
         jScrollPane4.setViewportView(jTableUser);
@@ -630,7 +645,7 @@ public class HomePage extends javax.swing.JFrame {
         ArrayList<User> listUser = User.GetUserList();
         for (int i = 0; i < listUser.size(); i++) {
             User temp = listUser.get(i);
-            model.addRow(new Object[]{temp.id, temp.fullname, temp.phone, temp.address, temp.gender == 1 ? "nam" : "nữ", temp.identify, temp.age, temp.height, temp.weight, temp.blood_type});
+            model.addRow(new Object[]{temp.id, temp.fullname, temp.phone, temp.address, temp.gender == 1 ? "Nam" : "Nữ", temp.identify, temp.age, temp.height, temp.weight, temp.blood_type});
         }
     }
 
@@ -970,7 +985,7 @@ public class HomePage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnDoctorDeleteActionPerformed
-                                             
+
     // get user information
     private User GetUser() throws Exception {
         if ("".equals(txtUFullname.getText()) || "".equals(txtUPhone.getText()) || "".equals(txtUAddress.getText()) || "".equals(txtUIdentify.getText()) || "".equals(txtUAge.getText()) || "".equals(txtUHeight.getText()) || "".equals(txtUWeight.getText()) || "".equals(txtUBlood.getText())) {
@@ -978,7 +993,7 @@ public class HomePage extends javax.swing.JFrame {
         }
         return new User(txtUFullname.getText(), txtUPhone.getText(), txtUAddress.getText(), ((String) jUGender.getSelectedItem()).equals("Nam") ? 1 : 0, txtUIdentify.getText(), txtUAge.getText(), txtUHeight.getText(), txtUWeight.getText(), txtUBlood.getText());
     }
-    
+
     private void btnUAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUAddActionPerformed
         // TODO add your handling code here:
         try {
@@ -1003,6 +1018,81 @@ public class HomePage extends javax.swing.JFrame {
         txtUWeight.setText("");
         txtUBlood.setText("");
     }//GEN-LAST:event_btnUResetActionPerformed
+
+    private void btnUEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUEditActionPerformed
+        // TODO add your handling code here:
+        try {
+            User temp = GetUser();
+            // get doctor id
+            // get user id
+            DefaultTableModel model = (DefaultTableModel) jTableUser.getModel();
+            int row = jTableUser.getSelectedRow();
+            int userId = (int) model.getValueAt(row, 0);
+            // delete user by id
+            temp.UpdateUser(userId);
+            BindUser();
+            JOptionPane.showMessageDialog(this, "Successful update user!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnUEditActionPerformed
+
+    private void jTableUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUserMouseClicked
+        // TODO add your handling code here:
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTableUser.getModel();
+            int row = jTableUser.getSelectedRow();
+            txtUFullname.setText(model.getValueAt(row, 1).toString());
+            txtUPhone.setText(model.getValueAt(row, 2).toString());
+            txtUAddress.setText(model.getValueAt(row, 3).toString());
+
+            // set gender to gender combobox
+            ArrayList<String> GenderList = User.GetGenderList();
+            for (int i = 0; i < GenderList.size(); i++) {
+                if (GenderList.get(i).equalsIgnoreCase(model.getValueAt(row, 4).toString())) {
+                    jUGender.setSelectedIndex(i);
+                    break;
+                }
+            }
+
+            txtUIdentify.setText(model.getValueAt(row, 5).toString());
+            txtUAge.setText(model.getValueAt(row, 6).toString());
+            txtUHeight.setText(model.getValueAt(row, 7).toString());
+            txtUWeight.setText(model.getValueAt(row, 8).toString());
+            txtUBlood.setText(model.getValueAt(row, 9).toString());
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jTableUserMouseClicked
+
+    private void btnUDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUDeleteActionPerformed
+        // TODO add your handling code here:
+        try {
+            int input = JOptionPane.showConfirmDialog(null, "Do you want to delete this user?", "Warning", JOptionPane.YES_NO_OPTION);
+            // 0=yes, 1=no, 2=cancel
+            if (input == 0) //th yes
+            {
+                // get user id
+                DefaultTableModel model = (DefaultTableModel) jTableUser.getModel();
+                int row = jTableUser.getSelectedRow();
+                int userId = (int) model.getValueAt(row, 0);
+                User.DeleteUser(userId);
+                txtUFullname.setText("");
+                txtUPhone.setText("");
+                txtUAddress.setText("");
+                txtUIdentify.setText("");
+                txtUAge.setText("");
+                txtUHeight.setText("");
+                txtUWeight.setText("");
+                txtUBlood.setText("");
+                BindUser();
+                JOptionPane.showMessageDialog(this, "Successful delete user!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnUDeleteActionPerformed
 
     /**
      * @param args the command line arguments

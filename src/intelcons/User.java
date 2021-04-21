@@ -78,4 +78,16 @@ public class User {
         String sql = String.format("INSERT INTO users (fullname, username, password, phone, address, gender, identify, age, height, weight, blood_type) VALUES('%s', '%s', '%s', '%s', '%s', %d, '%s', '%s', '%s', '%s', '%s')", this.fullname, "", "", this.phone, this.address, this.gender, this.identify, this.age, this.height, this.weight, this.blood_type);
         new SQLContext().ExcuteUpdate(sql);
     }
+    
+    // update hospital
+    public void UpdateUser(int userId) throws Exception {
+        String sql = String.format("UPDATE users SET fullname = '%s', phone = '%s', address = '%s', gender = %d, identify = '%s', age = '%s', height = '%s', weight = '%s', blood_type = '%s' WHERE id = %d", this.fullname, this.phone, this.address, this.gender, this.identify, this.age, this.height, this.weight, this.blood_type, userId);
+        new SQLContext().ExcuteUpdate(sql);
+    }
+
+    // delete user
+    public static void DeleteUser(int userId) throws Exception {
+        String sql = String.format("DELETE FROM users WHERE id = %d", userId);
+        new SQLContext().ExcuteUpdate(sql);
+    }
 }
