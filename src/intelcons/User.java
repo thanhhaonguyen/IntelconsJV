@@ -6,6 +6,7 @@
 package intelcons;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,16 +15,13 @@ import java.sql.ResultSet;
 public class User {
 
     // User info params
+    public int id;
     public String fullname;
-    public String username;
-    public char password;
     public String phone;
     public String address;
     public int gender;
-    public long identify;
+    public String identify;
     public String age;
-    public String gaurdian;
-    public String gaurdian_phone;
     public String height;
     public String weight;
     public String blood_type;
@@ -33,20 +31,51 @@ public class User {
 
     }
 
-    public User(String fullname, String username, char password, String phone, String address, int gender, long identify, String age, String gaurdian, String gaurdian_phone, String height, String weight, String blood_type) {
+    public User(String fullname, String phone, String address, int gender, String identify, String age, String height, String weight, String blood_type) {
         this.fullname = fullname;
-        this.username = username;
-        this.password = password;
         this.phone = phone;
         this.address = address;
         this.gender = gender;
         this.identify = identify;
         this.age = age;
-        this.gaurdian = gaurdian;
-        this.gaurdian_phone = gaurdian_phone;
         this.height = height;
         this.weight = weight;
         this.blood_type = blood_type;
     }
 
+    // get user list
+    public static ArrayList<User> GetUserList() throws Exception {
+        ArrayList<User> list = new ArrayList();
+        String query = "select * from users";
+        ResultSet rs = new SQLContext().ExcuteQuery(query);
+        while (rs.next()) {
+            User temp = new User();
+            temp.id = Integer.parseInt(rs.getString("id"));
+            temp.fullname = rs.getString("fullname");
+            temp.phone = rs.getString("phone");
+            temp.address = rs.getString("address");
+            temp.gender = Integer.parseInt(rs.getString("gender"));
+            temp.identify = rs.getString("identify");
+            temp.age = rs.getString("age");
+            temp.height = rs.getString("height");
+            temp.weight = rs.getString("weight");
+            temp.blood_type = rs.getString("blood_type");
+            list.add(temp);
+        }
+        return list;
+    }
+
+    // get gender list
+    public static ArrayList<String> GetGenderList() throws Exception {
+        ArrayList<String> list = new ArrayList();
+        list.add("Nam");
+        list.add("Nữ");
+        return list;
+    }
+    
+    // create new user - Insert
+    public void InsertUser() throws Exception {
+        String sql = String.format("INSERT INTO users (fullname, username, password, phone, address, gender, identify, age, height, weight, blood_type) VALUES('%s', '%s', '%s', '%s', '%s', %d, '%s', '%s', '%s', '%s', '%s')", this.fullname, "", "", this.phone, this.address, this.gender, this.identify, this.age, this.height, this.weight, this.blood_type);
+        new SQLContext().ExcuteUpdate(sql);
+    }
 }

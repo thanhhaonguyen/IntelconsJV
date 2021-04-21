@@ -84,4 +84,9 @@ public class Hospital {
         String sql = String.format("DELETE FROM hospitals WHERE id = %d", hospitalId);
         new SQLContext().ExcuteUpdate(sql);
     }
+    
+    @Override
+    public String toString() {
+        return this.id + "-" + this.name;
+    }
 }

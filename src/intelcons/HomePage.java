@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -62,8 +63,62 @@ public class HomePage extends javax.swing.JFrame {
         btnHDelete = new javax.swing.JButton();
         btnHReset = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtDName = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableDepartment = new javax.swing.JTable();
+        btnDAdd = new javax.swing.JButton();
+        btnDEdit = new javax.swing.JButton();
+        btnDDelete = new javax.swing.JButton();
+        btnDReset = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        txtDFullname = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtDPhone = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txtDAddress = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jDDepartment = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        jDHospital = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jDLocation = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        txtDLongitude = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtDLatitude = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableDoctor = new javax.swing.JTable();
+        btnDoctorAdd = new javax.swing.JButton();
+        btnDoctorEdit = new javax.swing.JButton();
+        btnDoctorDelete = new javax.swing.JButton();
+        btnDoctorReset = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        txtUFullname = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        txtUPhone = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txtUAddress = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        txtUIdentify = new javax.swing.JTextField();
+        jUGender = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        txtUAge = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        txtUHeight = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        txtUWeight = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        txtUBlood = new javax.swing.JTextField();
+        btnUAdd = new javax.swing.JButton();
+        btnUEdit = new javax.swing.JButton();
+        btnUDelete = new javax.swing.JButton();
+        btnUReset = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTableUser = new javax.swing.JTable();
 
         jMenu1.setText("jMenu1");
 
@@ -188,42 +243,299 @@ public class HomePage extends javax.swing.JFrame {
 
         jTabbedPane11.addTab("Hospital", jPanel2);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 994, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel1.setText("Name");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
+
+        txtDName.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel1.add(txtDName, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 240, -1));
+
+        jTableDepartment.setFont(new java.awt.Font("AppleGothic", 0, 12)); // NOI18N
+        jTableDepartment.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Name"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTableDepartment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableDepartmentMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTableDepartment);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 120, -1, 360));
+
+        btnDAdd.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnDAdd.setText("Add");
+        btnDAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDAddActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
+
+        btnDEdit.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnDEdit.setText("Edit");
+        btnDEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDEditActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
+
+        btnDDelete.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnDDelete.setText("Delete");
+        btnDDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDDeleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, -1, -1));
+
+        btnDReset.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnDReset.setText("Reset");
+        btnDReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDResetActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, -1, -1));
 
         jTabbedPane11.addTab("Department", jPanel1);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 994, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel5.setText("Fullname");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        jPanel3.add(txtDFullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 170, -1));
+
+        jLabel10.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel10.setText("Phone");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        jPanel3.add(txtDPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 170, -1));
+
+        jLabel11.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel11.setText("Address");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        jPanel3.add(txtDAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 170, -1));
+
+        jLabel12.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel12.setText("Department");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        jDDepartment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel3.add(jDDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 180, -1));
+
+        jLabel13.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel13.setText("Hospital");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+
+        jDHospital.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel3.add(jDHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 180, -1));
+
+        jLabel14.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel14.setText("Location");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+
+        jDLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel3.add(jDLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 180, -1));
+
+        jLabel15.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel15.setText("Longitude");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        jPanel3.add(txtDLongitude, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 170, -1));
+
+        jLabel16.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel16.setText("Latitude");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+        jPanel3.add(txtDLatitude, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 170, -1));
+
+        jTableDoctor.setFont(new java.awt.Font("AppleGothic", 0, 12)); // NOI18N
+        jTableDoctor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id", "fullname", "phone", "address", "department_id", "department_name", "hospital_id", "hospital_name", "location_id", "longitude", "latitude"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTableDoctor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableDoctorMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(jTableDoctor);
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 600, 470));
+
+        btnDoctorAdd.setText("Add");
+        btnDoctorAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoctorAddActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnDoctorAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+
+        btnDoctorEdit.setText("Edit");
+        btnDoctorEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoctorEditActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnDoctorEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
+
+        btnDoctorDelete.setText("Delete");
+        btnDoctorDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoctorDeleteActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnDoctorDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, -1, -1));
+
+        btnDoctorReset.setText("Reset");
+        btnDoctorReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoctorResetActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnDoctorReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, -1, -1));
 
         jTabbedPane11.addTab("Doctor", jPanel3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 994, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel17.setText("Fullname");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        txtUFullname.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel4.add(txtUFullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 170, -1));
+
+        jLabel18.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel18.setText("Phone");
+        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        txtUPhone.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel4.add(txtUPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 170, -1));
+
+        jLabel19.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel19.setText("Address");
+        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        txtUAddress.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel4.add(txtUAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 170, -1));
+
+        jLabel20.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel20.setText("Gender");
+        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel21.setText("Identify");
+        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+
+        txtUIdentify.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel4.add(txtUIdentify, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 170, -1));
+
+        jUGender.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jUGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel4.add(jUGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 170, -1));
+
+        jLabel22.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel22.setText("Age");
+        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+
+        txtUAge.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel4.add(txtUAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 170, -1));
+
+        jLabel23.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel23.setText("Height");
+        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, 20));
+
+        txtUHeight.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel4.add(txtUHeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 170, -1));
+
+        jLabel24.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel24.setText("Weight");
+        jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+
+        txtUWeight.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel4.add(txtUWeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 170, -1));
+
+        jLabel25.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jLabel25.setText("Blood");
+        jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+
+        txtUBlood.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        jPanel4.add(txtUBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 170, -1));
+
+        btnUAdd.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnUAdd.setText("Add");
+        btnUAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUAddActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnUAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, -1, -1));
+
+        btnUEdit.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnUEdit.setText("Edit");
+        jPanel4.add(btnUEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
+
+        btnUDelete.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnUDelete.setText("Delete");
+        jPanel4.add(btnUDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, -1, -1));
+
+        btnUReset.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
+        btnUReset.setText("Reset");
+        btnUReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUResetActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnUReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, -1, -1));
+
+        jTableUser.setFont(new java.awt.Font("AppleGothic", 0, 12)); // NOI18N
+        jTableUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id", "fullname", "phone", "address", "gender", "identify", "age", "height", "weight", "blood_type"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(jTableUser);
+
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 600, 470));
 
         jTabbedPane11.addTab("User", jPanel4);
 
@@ -247,12 +559,17 @@ public class HomePage extends javax.swing.JFrame {
     // bind hospital list to hospital page
     private void BindHospital() throws Exception {
         DefaultTableModel model = (DefaultTableModel) jTableHospital.getModel();
+        // show to hospital combobox
+        DefaultComboBoxModel modelcbx = new DefaultComboBoxModel();
         model.setRowCount(0);
-        ArrayList<Hospital> listProduct = Hospital.GetHospitalList();
-        for (int i = 0; i < listProduct.size(); i++) {
-            Hospital temp = listProduct.get(i);
+        ArrayList<Hospital> listHospital = Hospital.GetHospitalList();
+        for (int i = 0; i < listHospital.size(); i++) {
+            Hospital temp = listHospital.get(i);
             model.addRow(new Object[]{temp.id, temp.name, temp.address, temp.hotline, temp.location_id, temp.longitude, temp.latitude, temp.ranking});
+            // department combobox
+            modelcbx.addElement(listHospital.get(i));
         }
+        jDHospital.setModel(modelcbx);
     }
 
     // bind location list to location combobox
@@ -262,7 +579,10 @@ public class HomePage extends javax.swing.JFrame {
         for (int i = 0; i < LocationList.size(); i++) {
             model.addElement(LocationList.get(i));
         }
+        // hospital
         jHLocation.setModel(model);
+        // doctor
+        jDLocation.setModel(model);
     }
 
     // bind ranking list to ranking combobox
@@ -275,9 +595,57 @@ public class HomePage extends javax.swing.JFrame {
         jHRanking.setModel(model);
     }
 
+    // bind department list to department page
+    private void BindDepartment() throws Exception {
+        // show to department jtable
+        DefaultTableModel model = (DefaultTableModel) jTableDepartment.getModel();
+        // show to department combobox
+        DefaultComboBoxModel modelcbx = new DefaultComboBoxModel();
+        model.setRowCount(0);
+        ArrayList<Department> listDepartment = Department.GetDepartmentList();
+        for (int i = 0; i < listDepartment.size(); i++) {
+            Department temp = listDepartment.get(i);
+            model.addRow(new Object[]{temp.id, temp.name});
+            // department combobox
+            modelcbx.addElement(listDepartment.get(i));
+        }
+        jDDepartment.setModel(modelcbx);
+    }
+
+    // bind doctor list to doctor page
+    private void BindDoctor() throws Exception {
+        DefaultTableModel model = (DefaultTableModel) jTableDoctor.getModel();
+        model.setRowCount(0);
+        ArrayList<Doctor> listDoctor = Doctor.GetDoctorList();
+        for (int i = 0; i < listDoctor.size(); i++) {
+            Doctor temp = listDoctor.get(i);
+            model.addRow(new Object[]{temp.id, temp.fullname, temp.phone, temp.address, temp.department_id, temp.department_name, temp.hospital_id, temp.hospital_name, temp.location_id, temp.longitude, temp.latitude});
+        }
+    }
+
+    // bind user list to user page
+    private void BindUser() throws Exception {
+        DefaultTableModel model = (DefaultTableModel) jTableUser.getModel();
+        model.setRowCount(0);
+        ArrayList<User> listUser = User.GetUserList();
+        for (int i = 0; i < listUser.size(); i++) {
+            User temp = listUser.get(i);
+            model.addRow(new Object[]{temp.id, temp.fullname, temp.phone, temp.address, temp.gender == 1 ? "nam" : "nữ", temp.identify, temp.age, temp.height, temp.weight, temp.blood_type});
+        }
+    }
+
+    // bind gender list to gender combobox
+    private void BindGender() throws Exception {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        ArrayList<String> GenderList = User.GetGenderList();
+        for (int i = 0; i < GenderList.size(); i++) {
+            model.addElement(GenderList.get(i));
+        }
+        jUGender.setModel(model);
+    }
+
     // bind location list to location combobox
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
         // TODO add your handling code here:
         try {
             // show location to location combobox
@@ -286,6 +654,14 @@ public class HomePage extends javax.swing.JFrame {
             BindRanking();
             // show hospital list to hospital page
             BindHospital();
+            // show department list to department page
+            BindDepartment();
+            // show doctors list to doctor page
+            BindDoctor();
+            // show user list to user page
+            BindUser();
+            // show gender list to gender combobox
+            BindGender();
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -332,14 +708,13 @@ public class HomePage extends javax.swing.JFrame {
             // delete hospital by id
             temp.UpdateHospital(hospitalId);
             BindHospital();
-            JOptionPane.showMessageDialog(this, "Successful product update!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Successful update product!", "Notification", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnHEditActionPerformed
 
     private void jTableHospitalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableHospitalMouseClicked
-        // TODO add your handling code here:
         // TODO add your handling code here:
         try {
             DefaultTableModel model = (DefaultTableModel) jTableHospital.getModel();
@@ -394,12 +769,240 @@ public class HomePage extends javax.swing.JFrame {
                 txtLongtitude.setText("");
                 txtLatitude.setText("");
                 BindHospital();
-                JOptionPane.showMessageDialog(this, "Successful product delete!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Successful delete hospital!", "Notification", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnHDeleteActionPerformed
+
+    private void btnDResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDResetActionPerformed
+        // TODO add your handling code here:
+        txtDName.setText("");
+    }//GEN-LAST:event_btnDResetActionPerformed
+
+    // get hospital information
+    private Department GetDepartment() throws Exception {
+        if ("".equals(txtDName.getText())) {
+            throw new Exception("Department information cannot be left blank!”");
+        }
+        return new Department(txtDName.getText());
+    }
+
+    private void btnDAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDAddActionPerformed
+        // TODO add your handling code here:
+        try {
+            Department temp = GetDepartment();
+            temp.InsertDepartment();
+            // show department list to department page
+            BindDepartment();
+            JOptionPane.showMessageDialog(this, "Successfully added new department!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDAddActionPerformed
+
+    private void jTableDepartmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableDepartmentMouseClicked
+        // TODO add your handling code here:
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTableDepartment.getModel();
+            int row = jTableDepartment.getSelectedRow();
+            txtDName.setText(model.getValueAt(row, 1).toString());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jTableDepartmentMouseClicked
+
+    private void btnDEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDEditActionPerformed
+        // TODO add your handling code here:
+        try {
+            Department temp = GetDepartment();
+            // get department id
+            DefaultTableModel model = (DefaultTableModel) jTableDepartment.getModel();
+            int row = jTableDepartment.getSelectedRow();
+            int departmentId = (int) model.getValueAt(row, 0);
+            // delete department by id
+            temp.UpdateDepartment(departmentId);
+            BindDepartment();
+            JOptionPane.showMessageDialog(this, "Successful update department!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDEditActionPerformed
+
+    private void btnDDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDDeleteActionPerformed
+        // TODO add your handling code here:
+        try {
+            int input = JOptionPane.showConfirmDialog(null, "Do you want to delete this department?", "Warning", JOptionPane.YES_NO_OPTION);
+            // 0=yes, 1=no, 2=cancel
+            if (input == 0) //th yes
+            {
+                // get department id
+                DefaultTableModel model = (DefaultTableModel) jTableDepartment.getModel();
+                int row = jTableDepartment.getSelectedRow();
+                int departmentId = (int) model.getValueAt(row, 0);
+                Department.DeleteDepartment(departmentId);
+                txtDName.setText("");
+                BindDepartment();
+                JOptionPane.showMessageDialog(this, "Successful delete department!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDDeleteActionPerformed
+
+    private void btnDoctorResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorResetActionPerformed
+        // TODO add your handling code here:
+        txtDFullname.setText("");
+        txtDPhone.setText("");
+        txtDAddress.setText("");
+        txtDLongitude.setText("");
+        txtDLatitude.setText("");
+    }//GEN-LAST:event_btnDoctorResetActionPerformed
+
+    // get doctor information
+    private Doctor GetDoctor() throws Exception {
+        if ("".equals(txtDFullname.getText()) || "".equals(txtDPhone.getText()) || "".equals(txtDAddress.getText()) || "".equals(txtDLongitude.getText()) || "".equals(txtDLatitude.getText())) {
+            throw new Exception("Hospital information cannot be left blank!”");
+        }
+        return new Doctor(txtDFullname.getText(), txtDPhone.getText(), txtDAddress.getText(), ((Department) jDDepartment.getSelectedItem()).id, ((Hospital) jDHospital.getSelectedItem()).id, ((Location) jDLocation.getSelectedItem()).id, txtDLongitude.getText(), txtDLatitude.getText());
+    }
+
+    private void btnDoctorAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorAddActionPerformed
+        // TODO add your handling code here:
+        try {
+            Doctor temp = GetDoctor();
+            temp.InsertDoctor();
+            // show department list to department page
+            BindDoctor();
+            JOptionPane.showMessageDialog(this, "Successfully added new doctor!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDoctorAddActionPerformed
+
+    private void jTableDoctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableDoctorMouseClicked
+        // TODO add your handling code here:
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTableDoctor.getModel();
+            int row = jTableDoctor.getSelectedRow();
+            txtDFullname.setText(model.getValueAt(row, 1).toString());
+            txtDPhone.setText(model.getValueAt(row, 2).toString());
+            txtDAddress.setText(model.getValueAt(row, 3).toString());
+
+            Department temp = new Department(model.getValueAt(row, 5).toString());
+
+            ArrayList<Department> DepartmentList = Department.GetDepartmentList();
+            for (int i = 0; i < DepartmentList.size(); i++) {
+                if (DepartmentList.get(i).name.equals(temp.name)) {
+                    jDDepartment.setSelectedIndex(i);
+                    break;
+                }
+            }
+
+            // "" because there is no more hospital name in 
+            Hospital temph = new Hospital(model.getValueAt(row, 7).toString(), "", "", "", "", "", 0);
+
+            ArrayList<Hospital> HospitalList = Hospital.GetHospitalList();
+            for (int i = 0; i < HospitalList.size(); i++) {
+                if (HospitalList.get(i).name.equals(temph.name)) {
+                    jDHospital.setSelectedIndex(i);
+                    break;
+                }
+            }
+
+            // "" because there is no locatioin name in 
+            Location templ = new Location(model.getValueAt(row, 8).toString(), "");
+
+            ArrayList<Location> LocationList = Location.GetLocationList();
+            for (int i = 0; i < LocationList.size(); i++) {
+                if (LocationList.get(i).id.equals(templ.id)) {
+                    jDLocation.setSelectedIndex(i);
+                    break;
+                }
+            }
+
+            txtDLongitude.setText(model.getValueAt(row, 9).toString());
+            txtDLatitude.setText(model.getValueAt(row, 10).toString());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jTableDoctorMouseClicked
+
+    private void btnDoctorEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorEditActionPerformed
+        // TODO add your handling code here:
+        try {
+            Doctor temp = GetDoctor();
+            // get doctor id
+            DefaultTableModel model = (DefaultTableModel) jTableDoctor.getModel();
+            int row = jTableDoctor.getSelectedRow();
+            int doctorId = (int) model.getValueAt(row, 0);
+            // delete doctor by id
+            temp.UpdateDoctor(doctorId);
+            BindDoctor();
+            JOptionPane.showMessageDialog(this, "Successful update doctor!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDoctorEditActionPerformed
+
+    private void btnDoctorDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorDeleteActionPerformed
+        // TODO add your handling code here:
+        try {
+            int input = JOptionPane.showConfirmDialog(null, "Do you want to delete this doctor?", "Warning", JOptionPane.YES_NO_OPTION);
+            // 0=yes, 1=no, 2=cancel
+            if (input == 0) //th yes
+            {
+                // get doctor id
+                DefaultTableModel model = (DefaultTableModel) jTableDoctor.getModel();
+                int row = jTableDoctor.getSelectedRow();
+                int doctorId = (int) model.getValueAt(row, 0);
+                Doctor.DeleteDoctor(doctorId);
+                txtDFullname.setText("");
+                txtDPhone.setText("");
+                txtDAddress.setText("");
+                txtDLongitude.setText("");
+                txtDLatitude.setText("");
+                BindDoctor();
+                JOptionPane.showMessageDialog(this, "Successful delete doctor!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDoctorDeleteActionPerformed
+                                             
+    // get user information
+    private User GetUser() throws Exception {
+        if ("".equals(txtUFullname.getText()) || "".equals(txtUPhone.getText()) || "".equals(txtUAddress.getText()) || "".equals(txtUIdentify.getText()) || "".equals(txtUAge.getText()) || "".equals(txtUHeight.getText()) || "".equals(txtUWeight.getText()) || "".equals(txtUBlood.getText())) {
+            throw new Exception("Hospital information cannot be left blank!”");
+        }
+        return new User(txtUFullname.getText(), txtUPhone.getText(), txtUAddress.getText(), ((String) jUGender.getSelectedItem()).equals("Nam") ? 1 : 0, txtUIdentify.getText(), txtUAge.getText(), txtUHeight.getText(), txtUWeight.getText(), txtUBlood.getText());
+    }
+    
+    private void btnUAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUAddActionPerformed
+        // TODO add your handling code here:
+        try {
+            User temp = GetUser();
+            temp.InsertUser();
+            // show user list to user page
+            BindUser();
+            JOptionPane.showMessageDialog(this, "Successfully added new user!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnUAddActionPerformed
+
+    private void btnUResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUResetActionPerformed
+        // TODO add your handling code here:
+        txtUFullname.setText("");
+        txtUPhone.setText("");
+        txtUAddress.setText("");
+        txtUIdentify.setText("");
+        txtUAge.setText("");
+        txtUHeight.setText("");
+        txtUWeight.setText("");
+        txtUBlood.setText("");
+    }//GEN-LAST:event_btnUResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -437,15 +1040,48 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDAdd;
+    private javax.swing.JButton btnDDelete;
+    private javax.swing.JButton btnDEdit;
+    private javax.swing.JButton btnDReset;
+    private javax.swing.JButton btnDoctorAdd;
+    private javax.swing.JButton btnDoctorDelete;
+    private javax.swing.JButton btnDoctorEdit;
+    private javax.swing.JButton btnDoctorReset;
     private javax.swing.JButton btnHAdd;
     private javax.swing.JButton btnHDelete;
     private javax.swing.JButton btnHEdit;
     private javax.swing.JButton btnHReset;
+    private javax.swing.JButton btnUAdd;
+    private javax.swing.JButton btnUDelete;
+    private javax.swing.JButton btnUEdit;
+    private javax.swing.JButton btnUReset;
+    private javax.swing.JComboBox<String> jDDepartment;
+    private javax.swing.JComboBox<String> jDHospital;
+    private javax.swing.JComboBox<String> jDLocation;
     private javax.swing.JComboBox<String> jHLocation;
     private javax.swing.JComboBox<String> jHRanking;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -456,12 +1092,33 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane11;
+    private javax.swing.JTable jTableDepartment;
+    private javax.swing.JTable jTableDoctor;
     private javax.swing.JTable jTableHospital;
+    private javax.swing.JTable jTableUser;
+    private javax.swing.JComboBox<String> jUGender;
+    private javax.swing.JTextField txtDAddress;
+    private javax.swing.JTextField txtDFullname;
+    private javax.swing.JTextField txtDLatitude;
+    private javax.swing.JTextField txtDLongitude;
+    private javax.swing.JTextField txtDName;
+    private javax.swing.JTextField txtDPhone;
     private javax.swing.JTextField txtHAddress;
     private javax.swing.JTextField txtHHotline;
     private javax.swing.JTextField txtHName;
     private javax.swing.JTextField txtLatitude;
     private javax.swing.JTextField txtLongtitude;
+    private javax.swing.JTextField txtUAddress;
+    private javax.swing.JTextField txtUAge;
+    private javax.swing.JTextField txtUBlood;
+    private javax.swing.JTextField txtUFullname;
+    private javax.swing.JTextField txtUHeight;
+    private javax.swing.JTextField txtUIdentify;
+    private javax.swing.JTextField txtUPhone;
+    private javax.swing.JTextField txtUWeight;
     // End of variables declaration//GEN-END:variables
 }
