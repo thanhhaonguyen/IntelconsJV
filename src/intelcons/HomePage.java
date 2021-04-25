@@ -94,6 +94,24 @@ public class HomePage extends javax.swing.JFrame {
         btnDoctorEdit = new javax.swing.JButton();
         btnDoctorDelete = new javax.swing.JButton();
         btnDoctorReset = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        txtNTitle = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        txtNAuthor = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        txtNPostDate = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jNCancerType = new javax.swing.JComboBox<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTableNews = new javax.swing.JTable();
+        btnNAdd = new javax.swing.JButton();
+        btnNEdit = new javax.swing.JButton();
+        btnNDelete = new javax.swing.JButton();
+        btnNReset = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        txtNContent = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         txtUFullname = new javax.swing.JTextField();
@@ -424,6 +442,94 @@ public class HomePage extends javax.swing.JFrame {
 
         jTabbedPane11.addTab("Doctor", jPanel3);
 
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setText("Title");
+        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, 20));
+        jPanel5.add(txtNTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 200, -1));
+
+        jLabel27.setText("Content");
+        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+
+        jLabel28.setText("Author");
+        jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        jPanel5.add(txtNAuthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 200, -1));
+
+        jLabel29.setText("Post_date");
+        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        jPanel5.add(txtNPostDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 200, -1));
+
+        jLabel30.setText("Cancer_type");
+        jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+
+        jNCancerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel5.add(jNCancerType, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, -1));
+
+        jTableNews.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Title", "Cancer_type_id", "Cancer_type", "Author", "Post_date", "Content"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTableNews.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableNewsMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(jTableNews);
+
+        jPanel5.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 560, 430));
+
+        btnNAdd.setText("Add");
+        btnNAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNAddActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnNAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+
+        btnNEdit.setText("Edit");
+        btnNEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNEditActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnNEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, -1, -1));
+
+        btnNDelete.setText("Delete");
+        btnNDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNDeleteActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnNDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
+
+        btnNReset.setText("Reset");
+        btnNReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNResetActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnNReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, -1, -1));
+
+        txtNContent.setColumns(20);
+        txtNContent.setRows(5);
+        jScrollPane6.setViewportView(txtNContent);
+
+        jPanel5.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 200, 120));
+
+        jTabbedPane11.addTab("News", jPanel5);
+
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
@@ -659,6 +765,28 @@ public class HomePage extends javax.swing.JFrame {
         jUGender.setModel(model);
     }
 
+    // bind news list to news page
+    private void BindNews() throws Exception {
+        DefaultTableModel model = (DefaultTableModel) jTableNews.getModel();
+        model.setRowCount(0);
+        ArrayList<News> listNews = News.GetNewsList();
+        for (int i = 0; i < listNews.size(); i++) {
+            News temp = listNews.get(i);
+            model.addRow(new Object[]{temp.id, temp.title, temp.cancer_type_id, temp.cancer_type_name, temp.author, temp.post_date, temp.content});
+        }
+    }
+
+    // bind cancertype list to cancertype combobox
+    private void BindCancerType() throws Exception {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        ArrayList<Cancer_type> CancerTypeList = Cancer_type.GetCancerTypeList();
+        for (int i = 0; i < CancerTypeList.size(); i++) {
+            model.addElement(CancerTypeList.get(i));
+        }
+        // cancer type
+        jNCancerType.setModel(model);
+    }
+
     // bind location list to location combobox
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -677,6 +805,10 @@ public class HomePage extends javax.swing.JFrame {
             BindUser();
             // show gender list to gender combobox
             BindGender();
+            // show news list to news page
+            BindNews();
+            // show cancer_type list to cancer_type combobox
+            BindCancerType();
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -1023,12 +1155,11 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             User temp = GetUser();
-            // get doctor id
             // get user id
             DefaultTableModel model = (DefaultTableModel) jTableUser.getModel();
             int row = jTableUser.getSelectedRow();
             int userId = (int) model.getValueAt(row, 0);
-            // delete user by id
+            // update user by id
             temp.UpdateUser(userId);
             BindUser();
             JOptionPane.showMessageDialog(this, "Successful update user!", "Notification", JOptionPane.INFORMATION_MESSAGE);
@@ -1094,6 +1225,100 @@ public class HomePage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnUDeleteActionPerformed
 
+    // get doctor information
+    private News GetNews() throws Exception {
+        if ("".equals(txtNTitle.getText()) || "".equals(txtNAuthor.getText()) || "".equals(txtNPostDate.getText()) || "".equals(txtNContent.getText())) {
+            throw new Exception("News information cannot be left blank!”");
+        }
+        return new News(txtNTitle.getText(), ((Cancer_type) jNCancerType.getSelectedItem()).id, txtNAuthor.getText(), txtNPostDate.getText(), txtNContent.getText());
+    }
+
+    private void btnNAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNAddActionPerformed
+        // TODO add your handling code here:
+        try {
+            News temp = GetNews();
+            temp.InsertNews();
+            // show user list to news page
+            BindNews();
+            JOptionPane.showMessageDialog(this, "Successfully added new news!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnNAddActionPerformed
+
+    private void btnNResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNResetActionPerformed
+        // TODO add your handling code here:
+        txtNTitle.setText("");
+        txtNAuthor.setText("");
+        txtNPostDate.setText("");
+        txtNContent.setText("");
+    }//GEN-LAST:event_btnNResetActionPerformed
+
+    private void jTableNewsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableNewsMouseClicked
+        // TODO add your handling code here:
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTableNews.getModel();
+            int row = jTableNews.getSelectedRow();
+            txtNTitle.setText(model.getValueAt(row, 1).toString());
+            txtNAuthor.setText(model.getValueAt(row, 4).toString());
+            txtNPostDate.setText(model.getValueAt(row, 5).toString());
+            txtNContent.setText(model.getValueAt(row, 6).toString());
+
+            // set cancertype to cancertype combobox
+            ArrayList<Cancer_type> CancerTypeList = Cancer_type.GetCancerTypeList();
+            for (int i = 0; i < CancerTypeList.size(); i++) {
+                if (CancerTypeList.get(i).name.equals(model.getValueAt(row, 3).toString())) {
+                    jNCancerType.setSelectedIndex(i);
+                    break;
+                }
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jTableNewsMouseClicked
+
+    private void btnNEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNEditActionPerformed
+        // TODO add your handling code here:
+        try {
+            News temp = GetNews();
+            // get news id
+            DefaultTableModel model = (DefaultTableModel) jTableNews.getModel();
+            int row = jTableNews.getSelectedRow();
+            int newsId = (int) model.getValueAt(row, 0);
+            // update news by id
+            temp.UpdateNews(newsId);
+            BindNews();
+            JOptionPane.showMessageDialog(this, "Successful update news!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnNEditActionPerformed
+
+    private void btnNDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNDeleteActionPerformed
+        // TODO add your handling code here:
+        try {
+            int input = JOptionPane.showConfirmDialog(null, "Do you want to delete this news?", "Warning", JOptionPane.YES_NO_OPTION);
+            // 0=yes, 1=no, 2=cancel
+            if (input == 0) //th yes
+            {
+                // get news id
+                DefaultTableModel model = (DefaultTableModel) jTableNews.getModel();
+                int row = jTableNews.getSelectedRow();
+                int newsId = (int) model.getValueAt(row, 0);
+                News.DeleteNews(newsId);
+                txtNTitle.setText("");
+                txtNAuthor.setText("");
+                txtNPostDate.setText("");
+                txtNContent.setText("");
+                BindNews();
+                JOptionPane.showMessageDialog(this, "Successful delete news!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnNDeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1142,6 +1367,10 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton btnHDelete;
     private javax.swing.JButton btnHEdit;
     private javax.swing.JButton btnHReset;
+    private javax.swing.JButton btnNAdd;
+    private javax.swing.JButton btnNDelete;
+    private javax.swing.JButton btnNEdit;
+    private javax.swing.JButton btnNReset;
     private javax.swing.JButton btnUAdd;
     private javax.swing.JButton btnUDelete;
     private javax.swing.JButton btnUEdit;
@@ -1169,7 +1398,12 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1177,18 +1411,23 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JComboBox<String> jNCancerType;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane11;
     private javax.swing.JTable jTableDepartment;
     private javax.swing.JTable jTableDoctor;
     private javax.swing.JTable jTableHospital;
+    private javax.swing.JTable jTableNews;
     private javax.swing.JTable jTableUser;
     private javax.swing.JComboBox<String> jUGender;
     private javax.swing.JTextField txtDAddress;
@@ -1202,6 +1441,10 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField txtHName;
     private javax.swing.JTextField txtLatitude;
     private javax.swing.JTextField txtLongtitude;
+    private javax.swing.JTextField txtNAuthor;
+    private javax.swing.JTextArea txtNContent;
+    private javax.swing.JTextField txtNPostDate;
+    private javax.swing.JTextField txtNTitle;
     private javax.swing.JTextField txtUAddress;
     private javax.swing.JTextField txtUAge;
     private javax.swing.JTextField txtUBlood;
